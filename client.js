@@ -1,9 +1,10 @@
 const net = require("net");
+const { IP, PORT, nameInitials } = require('./constants');
 
 const connect = function() {
   const conn = net.createConnection({
-    host: "135.23.222.131",
-    port: "50542"
+    host: IP,
+    port: PORT
   });
   conn.setEncoding("utf8");
   // print message when connected to server
@@ -12,7 +13,7 @@ const connect = function() {
   });
   // sent name string to the server
   conn.on("connect", () => {
-    conn.write("Name: AHK");
+    conn.write(`Name: ${nameInitials}`);
     // setInterval(() => {
     //   conn.write("Move: up");
     // }, 50);
