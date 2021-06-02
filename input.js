@@ -13,6 +13,9 @@ const handleUserInput = function(key) {
   if (key === '\u0003') {
     process.exit();
   }
+  if (key === 'q') {
+    connection.write("Say: Out of the Way!");
+  }
   if (key === 'w') {
     connection.write("Move: up");
   }
