@@ -13,6 +13,9 @@ const connect = function() {
   // sent name string to the server
   conn.on("connect", () => {
     conn.write("Name: AHK");
+    // setInterval(() => {
+    //   conn.write("Move: up");
+    // }, 50);
   });
 
   // interpret incoming data as text
